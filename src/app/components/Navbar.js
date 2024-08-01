@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className=" text-white p-4 flex m-1 items-center justify-between">
+    <nav className=" text-white p-[2rem] py-[1rem] flex m-1 items-center justify-between">
       <div className="flex items-center">
         <div className="bg-yellow-500 h-8 w-8 rounded-full mr-2"></div>
         <span className="text-xl font-bold">VIVAX</span>
@@ -19,7 +19,7 @@ const Navbar = () => {
       </div>
       <div className="md:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
-         <FaBars/>
+          <FaBars />
         </button>
       </div>
       {isOpen && (
