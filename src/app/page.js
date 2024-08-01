@@ -127,7 +127,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-black text-white py-12 px-4">
+      {/* <div className="bg-black text-white py-12 px-4">
         <div className="text-left ml-5 mb-10">
           <h1 className="text-[5rem] font-bold" style={{ fontFamily: 'Monument Extended' }}>PACKAGES</h1>
           <p className="mt-4 opacity-55">
@@ -147,9 +147,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       <div className="flex items-center justify-center  bg-black p-4">
-        <div className="text-center text-white max-w-xl">
+        <div className="text-center text-white max-w-xl my-[10rem]">
           <p className="text-2xl md:text-4xl font-bold mb-4">
             &quot;IF YOU ARE NOT A <span className="text-yellow-400">RISK</span>{" "}
             TAKER, YOU SHOULD GET THE HELL OUT OF{" "}
@@ -242,7 +242,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="text-center flex justify-between py-8 px-[2rem] bg-black text-white">
+      <div className="text-center mt-[5rem] flex justify-between py-8 px-[2rem] bg-black text-white">
         <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>TESTIMONIALS</h1>
         <button className="mt-4  bg-yellow-500 text-black py-2 px-4 rounded-full">
           More Testimonials
