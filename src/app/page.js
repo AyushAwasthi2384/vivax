@@ -6,7 +6,7 @@ import ContactForm from "./components/ContactForm";
 import matrix_innovation from "../Assets/matrix_innovation.png";
 import Grayy from "@/Assets/grayy_logo.png";
 import vivax from "@/Assets/vivax.jpeg";
-import Apna_Colsultant from "@/Assets/Apna_Consultant.png";
+import Apna_Colsultant from "@/Assets/Apna_consultant.png";
 import { CiGlobe } from "react-icons/ci";
 import TestimonialCard from "./components/TestimonialCard";
 import Loader from "./components/Loader";
@@ -186,7 +186,7 @@ export default function Home() {
               <Image
                 src={Grayy}
                 alt={Grayy}
-                className="object-cover rounded-[2rem]  h-[20rem] w-[100%]"
+                className="object-cover rounded-[3rem]  h-[25rem] w-[100%]"
               />
             </div>
             <div className="p-4 text-center text-white">
@@ -205,7 +205,7 @@ export default function Home() {
               <Image
                 src={matrix_innovation}
                 alt={matrix_innovation}
-                className="object-cover rounded-[2rem] h-[20rem] w-[100%] "
+                className="object-cover rounded-[3rem] h-[25rem] w-[100%] "
               />
             </div>
             <div className="p-4 text-center text-white">
@@ -227,7 +227,7 @@ export default function Home() {
             <Image
               src={Apna_Colsultant}
               alt={Apna_Colsultant}
-              className="object-cover rounded-[1rem] w-[60%] translate-x-[18rem]"
+              className="object-cover rounded-[3rem] w-[60%] translate-x-[18rem]"
             />
           </div>
           <div className="p-4 text-center text-white">
