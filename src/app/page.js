@@ -1,13 +1,25 @@
+"use client"
 import Image from "next/image";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ContactForm from "./components/ContactForm";
 import project1 from "../Assets/project1.png";
 import project2 from "../Assets/project2.png";
 import vivax from "../Assets/vivax.jpeg";
 import TestimonialCard from "./components/TestimonialCard";
 import Loader from "./components/Loader";
+import { useEffect, useState } from "react";
 export default function Home() {
+
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
   const testimonials = [
     {
       company: "Apna Consultant",
@@ -31,7 +43,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <Loader />
+      {visible && <Loader />}
       <div className="flex flex-col md:flex-row">
         <div className=" w-[70%] mt-[2rem]">
           <Image
