@@ -38,6 +38,7 @@ export default function Home() {
             src={vivax}
             className="rounded-tr-[5rem] h-[30rem] object-cover rounded-br-[5rem]"
             alt="vivax"
+            placeholder="blur"
           ></Image>
         </div>
         <div className=" w-[20%] ml-[2rem] m-4 ">
