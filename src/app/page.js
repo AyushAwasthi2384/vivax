@@ -9,25 +9,23 @@ import TestimonialCard from "./components/TestimonialCard";
 export default function Home() {
   const testimonials = [
     {
+      company: "Apna Consultant",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
-      author: "Lorem Ipsum",
+        "Vivax recognized our needs, and went beyond what we expected. Our online visibility has never been this good.",
+      author: "Mirza Shakeel, CEO",
     },
     {
+      company: "Matrix Innovation",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
-      author: "Lorem Ipsum",
+        "Their creativity and expertise revolutionized our online strategy. They connected us with our audience in ways we never imagined. Highly recommend!",
+      author: "Raunik Shukla, CEO",
     },
     {
+      company: "Grayy",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
-      author: "Lorem Ipsum",
-    },
-    {
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
-      author: "Lorem Ipsum",
-    },
+        "Vivax is a partner in our success! I am very happy with their work. Their efforts led to great results. Thank you guys.",
+      author: "Nishant Jaiswal, CEO",
+    }
   ];
 
   return (
@@ -77,7 +75,7 @@ export default function Home() {
                 <br />
                 <br />
                 We use our experience to make your digital wishes come true and make sure your brand stands out in the jam-packed internet market.
-                Are you prepared to leave your imprint in the online world? Together, let's go into this thrilling adventure!
+                Are you prepared to leave your imprint in the online world? Together, let&apos;s go into this thrilling adventure!
               </p>
             </div>
             <div className="border-t border-gray-700 pt-4 mt-4">
@@ -113,9 +111,9 @@ export default function Home() {
       <div className="flex items-center justify-center  bg-black p-4">
         <div className="text-center text-white max-w-xl">
           <p className="text-2xl md:text-4xl font-bold mb-4">
-            "IF YOU ARE NOT A <span className="text-yellow-400">RISK</span>{" "}
+            &quot;IF YOU ARE NOT A <span className="text-yellow-400">RISK</span>{" "}
             TAKER, YOU SHOULD GET THE HELL OUT OF{" "}
-            <span className="text-yellow-400">BUSINESS</span>."
+            <span className="text-yellow-400">BUSINESS</span>.&quot;
           </p>
           <p className="text-lg md:text-2xl font-semibold">- Ray Kroc</p>
         </div>
@@ -185,12 +183,13 @@ export default function Home() {
           More Testimonials
         </button>
       </div>
-      <div className="container mx-auto  px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-[2rem] grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard
             key={index}
             content={testimonial.content}
             author={testimonial.author}
+            company={testimonial.company}
           />
         ))}
       </div>
