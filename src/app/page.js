@@ -71,11 +71,11 @@ export default function Home() {
               <p className="text-gray-300">
                 Vivax focuses in boosting your online presence and helping your business grow in the digital world.
                 Our packages are customised to fit your unique requirements and enhance the online exposure of what you do.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 We provide everything from excellent SEO and slick, user-friendly websites to intriguing blogs and social media reels. It is your one-stop shop for digital success, merging vision with creativity in a seamless manner.
-                <br/>
-                <br/>
+                <br />
+                <br />
                 We use our experience to make your digital wishes come true and make sure your brand stands out in the jam-packed internet market.
                 Are you prepared to leave your imprint in the online world? Together, let's go into this thrilling adventure!
               </p>
@@ -93,8 +93,7 @@ export default function Home() {
         <div className="text-left ml-5 mb-10">
           <h1 className="text-[5rem] font-bold" style={{ fontFamily: 'Monument Extended' }}>PACKAGES</h1>
           <p className="mt-4 opacity-55">
-            Every one of us loves something different. So, explore the world
-            through the lens of our visual capabilities, and find what you love.
+            Discover our customized packages, intended to boost your brand and turn your digital aspirations into reality.
           </p>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -123,9 +122,8 @@ export default function Home() {
       </div>
       <div className="text-center py-8 bg-black text-white">
         <h1 className="text-[5rem] md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>PROJECTS.</h1>
-        <p className="text-lg md:text-xl mt-4">
-          Every one of us loves something different. So, explore the world
-          through the lens of our visual capabilities, and find what you love.
+        <p className="text-lg md:text-xl">
+          Check out our awesome projects, crafted to make your brand shine and engage with your audience!
         </p>
       </div>
       <div className="flex justify-center gap-4 mt-4 mb-8">
