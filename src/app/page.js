@@ -3,8 +3,8 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
-import matrix_innovation from "../Assets/matrix_innovation_logo.jpeg";
-import Grayy from "../Assets/grayy_logo.jpeg";
+import matrix_innovation from "../Assets/matrix_innovation.png";
+import Grayy from "../Assets/grayy_logo.png";
 import vivax from "../Assets/vivax.jpeg";
 import Apna_Colsultant from "../Assets/Apna_Consultant.png";
 import { CiGlobe } from "react-icons/ci";
@@ -186,7 +186,7 @@ export default function Home() {
               <Image
                 src={Grayy}
                 alt={Grayy}
-                className="object-cover rounded-[5rem] w-[50%] translate-x-36"
+                className="object-cover rounded-[2rem]  h-[20rem] w-[100%]"
               />
             </div>
             <div className="p-4 text-center text-white">
@@ -205,7 +205,7 @@ export default function Home() {
               <Image
                 src={matrix_innovation}
                 alt={matrix_innovation}
-                className="object-cover rounded-[5rem] w-[50%] translate-x-36"
+                className="object-cover rounded-[2rem] h-[20rem] w-[100%] "
               />
             </div>
             <div className="p-4 text-center text-white">
@@ -231,7 +231,7 @@ export default function Home() {
             />
           </div>
           <div className="p-4 text-center text-white">
-            <h2 className="text-2xl font-semibold">Grayy</h2>
+            <h2 className="text-2xl font-semibold">Apna Consultant</h2>
             <p className="mt-2 opacity-55">
               At Apnaconsultant, we provide comprehensive financial and tax
               advisory services tailored to your needs. Whether it's tax
