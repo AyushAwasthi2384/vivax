@@ -1,6 +1,8 @@
 "use client"
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import logo from '@/Assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className=" text-white p-[2rem] py-[1rem] flex m-1 items-center justify-between">
       <div className="flex items-center">
-        <div className="bg-yellow-500 h-8 w-8 rounded-full mr-2"></div>
+        <Image className='h-8 w-8 rounded-full mr-2' src={logo} alt="vivax logo" width={40} height={40} placeholder='blur'/>
         <span className="text-xl font-bold" style={{ fontFamily: 'Monument Extended', letterSpacing: '3px' }}>VIVAX</span>
       </div>
       <div className="hidden md:flex space-x-8">
