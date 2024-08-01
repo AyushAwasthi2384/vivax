@@ -1,113 +1,201 @@
 import Image from "next/image";
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
+import project1 from "../Assets/project1.png";
+import project2 from "../Assets/project2.png";
+import vivax from "../Assets/vivax.jpeg";
+import TestimonialCard from "./components/TestimonialCard";
 export default function Home() {
+  const testimonials = [
+    {
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
+      author: "Lorem Ipsum",
+    },
+    {
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
+      author: "Lorem Ipsum",
+    },
+    {
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
+      author: "Lorem Ipsum",
+    },
+    {
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus id luctus.",
+      author: "Lorem Ipsum",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="">
+      <div className="flex flex-col md:flex-row">
+        <div className=" w-[70%] mt-[2rem]">
+          <Image
+            src={vivax}
+            className="rounded-tr-[5rem] rounded-br-[5rem]"
+            alt="vivax"
+          ></Image>
+        </div>
+        <div className=" w-[30%] m-4 ">
+          <p className="font-[Roboto] translate-y-52  text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            saepe corporis tenetur laboriosam vero, modi excepturi, aut, dolorem
+            impedit ipsa sunt. Asperiores, optio sunt. Neque molestiae quasi
+            sunt magnam nulla.
+          </p>
         </div>
       </div>
+      <div className=" text-center">
+        <span className="text-white text-[15rem]">VIVAX</span>
+      </div>
+      <div className="justify-between text-white py-12 px-4">
+        <div className="  grid grid-cols-2 gap-4">
+          <div className="flex  flex-col justify-between">
+            <div className="flex  items-center space-x-4">
+              <div className="rounded-full bg-gray-700 p-3">
+                <span className="text-pink-500 text-[3rem] font-bold">A</span>
+              </div>
+              <span className="uppercase text-[3rem] tracking-widest">
+                Located in India
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="text-gray-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus rhoncus ex non porttitor aliquet. Nam varius ac lacus
+                id luctus. Mauris auctor dolor vel felis feugiat tincidunt.
+                Quisque et dolor dapibus, lobortis lectus vitae, pretium nunc.
+                Suspendisse potenti.
+              </p>
+              <p className="mt-4 text-gray-300">
+                Ut eu odio lorem. Morbi pretium sem pulvinar, malesuada magna
+                ut, euismod nulla. Curabitur finibus tincidunt dictum. Curabitur
+                suscipit blandit fermentum. Sed dictum ligula vitae elit
+                convallis porttitor.
+              </p>
+            </div>
+            <div className="border-t border-gray-700 pt-4 mt-4">
+              <h2 className="text-xl font-bold">Discuss Your Ideas</h2>
+              <p className="text-sm">
+                Discuss your ideas and get advice from professionals
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-black text-white py-12 px-4">
+        <div className="text-center mb-10">
+          <h1 className="text-[5rem] font-bold">PACKAGES</h1>
+          <p className="mt-4 opacity-55">
+            Every one of us loves something different. So, explore the world
+            through the lens of our visual capabilities, and find what you love.
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((item) => (
+            <div
+              key={item}
+              className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden p-6 space-y-6"
+            >
+              <div className="h-[25rem] bg-gray-700"></div>
+              <button className="w-full bg-white text-gray-900 rounded-full py-2">
+                Select Package
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-center  bg-black p-4">
+        <div className="text-center text-white max-w-xl">
+          <p className="text-2xl md:text-4xl font-bold mb-4">
+            "IF YOU ARE NOT A <span className="text-yellow-400">RISK</span>{" "}
+            TAKER, YOU SHOULD GET THE HELL OUT OF{" "}
+            <span className="text-yellow-400">BUSINESS</span>."
+          </p>
+          <p className="text-lg md:text-2xl font-semibold">- Ray Kroc</p>
+        </div>
+      </div>
+      <div className="text-center py-8 bg-black text-white">
+        <h1 className="text-4xl md:text-6xl font-bold">PROJECTS.</h1>
+        <p className="text-lg md:text-xl mt-4">
+          Every one of us loves something different. So, explore the world
+          through the lens of our visual capabilities, and find what you love.
+        </p>
+      </div>
+      <div className="flex justify-center gap-4 mt-4 mb-8">
+        <button className="bg-yellow-500 text-black py-2 px-4 rounded-full">
+          Development
+        </button>
+        <button className="bg-gray-800 text-white py-2 px-4 rounded-full">
+          Design
+        </button>
+        <button className="bg-gray-800 text-white py-2 px-4 rounded-full">
+          Digital Marketing
+        </button>
+        <button className="bg-yellow-500 text-black py-2 px-4 rounded-full">
+          Explore
+        </button>
+      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <div className=" flex">
+        <div className="flex w-[50%] flex-col m-[2rem]">
+          <div className="">
+            <Image
+              src={project1}
+              alt={project1}
+              className="object-cover rounded-[5rem]"
+            />
+          </div>
+          <div className="p-4 text-center text-white">
+            <h2 className="text-2xl font-semibold">Zajno</h2>
+            <p className="mt-2 opacity-55">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
+              omnis molestias consequatur voluptatibus quis aut autem animi
+              voluptates debitis soluta mollitia accusantium, minima sed et quae
+              odio. Ipsa, perspiciatis aspernatur.
+            </p>
+          </div>
+        </div>
+        <div className="flex w-[50%] flex-col m-[2rem]">
+          <div className="">
+            <Image
+              src={project2}
+              alt={project2}
+              className="object-cover rounded-[5rem]"
+            />
+          </div>
+          <div className="p-4 text-center text-white">
+            <h2 className="text-2xl font-semibold">Finolio website</h2>
+            <p className="mt-2 opacity-55">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+              iure minus voluptate consectetur recusandae reiciendis dolore
+              eaque quod, expedita commodi culpa perferendis quasi. Dignissimos,
+              corrupti voluptatem. Mollitia iusto voluptatum vel.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="text-center flex gap-[50rem] py-8 bg-black text-white">
+        <h1 className="text-4xl md:text-6xl font-bold">TESTIMONIAL.</h1>
+        <button className="mt-4  bg-yellow-500 text-black py-2 px-4 rounded-full">
+          More Testimonials
+        </button>
+      </div>
+      <div className="container mx-auto  px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <TestimonialCard
+          key={index}
+          content={testimonial.content}
+          author={testimonial.author}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      ))}
+    </div>
     </main>
   );
 }
