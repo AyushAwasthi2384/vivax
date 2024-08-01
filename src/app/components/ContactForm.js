@@ -3,12 +3,17 @@ import React from "react";
 const ContactForm = () => {
   return (
     <div className="flex justify-between min-h-screen p-4">
-        <div>
-            <h1 className="text-white">SAY</h1>
-            <h1 className="text-white">Hello</h1>
-        </div>
+      <div>
+        <h1 className="text-yellow-400 ml-[2rem] text-[3rem]">SAY</h1>
+        <h1
+          className="text-white text-[10rem] ml-[2rem] font-[
+Monument Extended]"
+        >
+          HELLO!
+        </h1>
+      </div>
       <div className="w-full m-4 max-w-lg p-8 bg-white shadow-lg rounded">
-        <h2 className="text-3xl font-bold mb-6 text-center">Say Hello!</h2>
+        <h2 className="text-3xl font-bold mb-6  text-center">For project queries</h2>
         <form>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -68,7 +73,7 @@ const ContactForm = () => {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-black hover:bg-yellow-200 hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
               Lets Talk
