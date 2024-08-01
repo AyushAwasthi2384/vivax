@@ -11,6 +11,7 @@ import { CiGlobe } from "react-icons/ci";
 import TestimonialCard from "./components/TestimonialCard";
 import Loader from "./components/Loader";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 export default function Home() {
 
   const [visible, setVisible] = useState(true);
@@ -180,15 +181,15 @@ export default function Home() {
       </div>
 
       {flag && (
-        <div className=" flex">
+        <div className="flex">
           <div className="flex w-[50%] flex-col m-[2rem]">
-            <div className="">
+            <Link href={"https://www.linkedin.com/company/grayy/"} target="_blank" className="">
               <Image
                 src={Grayy}
                 alt={Grayy}
-                className="object-cover rounded-[3rem]  h-[25rem] w-[100%]"
+                className="object-cover rounded-[3rem]  h-[25rem] w-[100%] hover:opacity-80 cursor-pointer"
               />
-            </div>
+            </Link>
             <div className="p-4 text-center text-white">
               <h2 className="text-2xl font-semibold">Grayy</h2>
               <p className="mt-2 opacity-55">
@@ -201,13 +202,13 @@ export default function Home() {
             </div>
           </div>
           <div className="flex w-[50%] flex-col m-[2rem]">
-            <div className="">
+            <Link href={"https://www.linkedin.com/company/matrix-innovation/"} target="_blank" className="">
               <Image
                 src={matrix_innovation}
                 alt={matrix_innovation}
-                className="object-cover rounded-[3rem] h-[25rem] w-[100%] "
+                className="object-cover rounded-[3rem] h-[25rem] w-[100%] hover:opacity-80 cursor-pointer"
               />
-            </div>
+            </Link>
             <div className="p-4 text-center text-white">
               <h2 className="text-2xl font-semibold">Matrix innovation</h2>
               <p className="mt-2 opacity-55">
@@ -223,13 +224,13 @@ export default function Home() {
       )}
       {!flag && (
         <div className="flex  flex-col m-[2rem]">
-          <div className="">
+          <Link href={"https://www.linkedin.com/company/apnaconsultant/"} target="_blank" className="">
             <Image
               src={Apna_Colsultant}
               alt={Apna_Colsultant}
-              className="object-cover rounded-[3rem] w-[60%] translate-x-[18rem]"
+              className="object-cover rounded-[3rem] w-[60%] translate-x-[18rem] hover:opacity-80 cursor-pointer"
             />
-          </div>
+          </Link>
           <div className="p-4 text-center text-white">
             <h2 className="text-2xl font-semibold">Apna Consultant</h2>
             <p className="mt-2 opacity-55">

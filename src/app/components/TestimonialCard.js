@@ -10,7 +10,7 @@ const TestimonialCard = ({ content, author, company }) => {
         </div>
       </div>
       <p className="text-gray-300">{content}</p>
-      <button className="mt-4 text-yellow-400">{author}</button>
+      <div className="mt-4 text-yellow-400">{author}</div>
     </div>
   );
 }
