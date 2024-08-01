@@ -234,7 +234,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold">Apna Consultant</h2>
             <p className="mt-2 opacity-55">
               At Apnaconsultant, we provide comprehensive financial and tax
-              advisory services tailored to your needs. Whether it's tax
+              advisory services tailored to your needs. Whether it&apos;s tax
               planning, auditing, or business consulting, our expert team is
               here to guide you every step of the way. Trust us to handle your
               financial matters with the utmost precision and care.
