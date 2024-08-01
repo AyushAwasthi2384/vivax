@@ -1,8 +1,13 @@
-"use client"
+"use client";
 import Image from "next/image";
-import project1 from "../Assets/project1.png";
-import project2 from "../Assets/project2.png";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
+import matrix_innovation from "../Assets/matrix_innovation_logo.jpeg";
+import Grayy from "../Assets/grayy_logo.jpeg";
 import vivax from "../Assets/vivax.jpeg";
+import Apna_Colsultant from "../Assets/Apna_Consultant.png";
+import { CiGlobe } from "react-icons/ci";
 import TestimonialCard from "./components/TestimonialCard";
 import Loader from "./components/Loader";
 import { useEffect, useState } from "react";
@@ -18,7 +23,9 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-
+  const [flag, setflag] = useState(true);
+  const [bgColor, setBgColor] = useState('bg-gray-800');
+  const [bgDesign, setbgDesign] = useState('bg-yellow-500');
 
   const testimonials = [
     {
@@ -38,8 +45,26 @@ export default function Home() {
       content:
         "Vivax is a partner in our success! I am very happy with their work. Their efforts led to great results. Thank you guys.",
       author: "Nishant Jaiswal, CEO",
+    },
+    {
+      company: "Amorr",
+      content:
+        "Vivax nailed it! Their fresh approach helped us connect with our audience like never before. So glad we chose them!",
+      author: "Tushar Tiwari, CEO",
     }
   ];
+
+  const Apnaconsultant = () => {
+    if (flag) {
+      setBgColor('bg-yellow-500 text-black');
+      setbgDesign('bg-gray-800 text-white');
+    }
+    else {
+      setBgColor('bg-gray-800 text-white');
+      setbgDesign('bg-yellow-500 text-black');
+    }
+    setflag(!flag);
+  }
 
   return (
     <main className="">
@@ -71,12 +96,12 @@ export default function Home() {
         <div className="  grid grid-cols-2 gap-4">
           <div className="flex  flex-col justify-between">
             <div className="flex items-center space-x-4">
-              <div className="rounded-full bg-gray-700 p-3">
-                <span className="text-pink-500 text-[3rem] font-bold">A</span>
-              </div>
               <span className="uppercase text-[3rem] tracking-widest">
                 Located in India
               </span>
+              <div className="rounded-full bg-gray-700 p-3 hover:cursor-pointer hover:scale-[1.7] hover:rotate-[-127deg]" style={{ transition: 'all 0.3s ease-in-out' }}>
+                <CiGlobe />
+              </div>
             </div>
           </div>
           <div className="flex flex-col justify-between">
@@ -140,13 +165,13 @@ export default function Home() {
         </p>
       </div>
       <div className="flex justify-center gap-4 mt-4 mb-8">
-        <button className="bg-yellow-500 text-black py-2 px-4 rounded-full">
-          Development
-        </button>
-        <button className="bg-gray-800 text-white py-2 px-4 rounded-full">
+        <button className={`${bgDesign} py-2 px-4 rounded-full`} onClick={Apnaconsultant}>
           Design
         </button>
-        <button className="bg-gray-800 text-white py-2 px-4 rounded-full">
+        <button
+          className={`${bgColor} py-2 px-4 rounded-full`}
+          onClick={Apnaconsultant}
+        >
           Digital Marketing
         </button>
         <button className="bg-yellow-500 text-black py-2 px-4 rounded-full">
@@ -154,57 +179,81 @@ export default function Home() {
         </button>
       </div>
 
-      <div className=" flex">
-        <div className="flex w-[50%] flex-col m-[2rem]">
+      {flag && (
+        <div className=" flex">
+          <div className="flex w-[50%] flex-col m-[2rem]">
+            <div className="">
+              <Image
+                src={Grayy}
+                alt={Grayy}
+                className="object-cover rounded-[5rem] w-[50%] translate-x-36"
+              />
+            </div>
+            <div className="p-4 text-center text-white">
+              <h2 className="text-2xl font-semibold">Grayy</h2>
+              <p className="mt-2 opacity-55">
+                Grayy is an innovative investment platform dedicated to
+                connecting retail investors with high-growth startups. By
+                leveraging blockchain technology, we ensure secure and
+                transparent transactions, significantly streamlining the
+                fundraising process for startups.
+              </p>
+            </div>
+          </div>
+          <div className="flex w-[50%] flex-col m-[2rem]">
+            <div className="">
+              <Image
+                src={matrix_innovation}
+                alt={matrix_innovation}
+                className="object-cover rounded-[5rem] w-[50%] translate-x-36"
+              />
+            </div>
+            <div className="p-4 text-center text-white">
+              <h2 className="text-2xl font-semibold">Matrix innovation</h2>
+              <p className="mt-2 opacity-55">
+                Matrix Innovation embraces remote work, promoting flexibility
+                and productivity. Employees are encouraged to maintain open
+                communication, adhere to work hours, ensure data security, and
+                use reliable tools for seamless collaboration. Trust,
+                responsibility, and results drive our remote work culture.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {!flag && (
+        <div className="flex  flex-col m-[2rem]">
           <div className="">
             <Image
-              src={project1}
-              alt={project1}
-              className="object-cover rounded-[5rem]"
+              src={Apna_Colsultant}
+              alt={Apna_Colsultant}
+              className="object-cover rounded-[1rem] w-[60%] translate-x-[18rem]"
             />
           </div>
           <div className="p-4 text-center text-white">
-            <h2 className="text-2xl font-semibold">Zajno</h2>
+            <h2 className="text-2xl font-semibold">Grayy</h2>
             <p className="mt-2 opacity-55">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-              omnis molestias consequatur voluptatibus quis aut autem animi
-              voluptates debitis soluta mollitia accusantium, minima sed et quae
-              odio. Ipsa, perspiciatis aspernatur.
+              At Apnaconsultant, we provide comprehensive financial and tax
+              advisory services tailored to your needs. Whether it's tax
+              planning, auditing, or business consulting, our expert team is
+              here to guide you every step of the way. Trust us to handle your
+              financial matters with the utmost precision and care.
             </p>
           </div>
         </div>
-        <div className="flex w-[50%] flex-col m-[2rem]">
-          <div className="">
-            <Image
-              src={project2}
-              alt={project2}
-              className="object-cover rounded-[5rem]"
-            />
-          </div>
-          <div className="p-4 text-center text-white">
-            <h2 className="text-2xl font-semibold">Finolio website</h2>
-            <p className="mt-2 opacity-55">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
-              iure minus voluptate consectetur recusandae reiciendis dolore
-              eaque quod, expedita commodi culpa perferendis quasi. Dignissimos,
-              corrupti voluptatem. Mollitia iusto voluptatum vel.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="text-center flex justify-between py-8 bg-black text-white px-10">
-        <h1 className="text-[5rem] md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>TESTIMONIALS</h1>
-        <button className="mt-4 bg-yellow-500 text-black py-2 px-4 rounded-full">
+      )}
+      <div className="text-center flex justify-between py-8 px-[2rem] bg-black text-white">
+        <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>TESTIMONIALS</h1>
+        <button className="mt-4  bg-yellow-500 text-black py-2 px-4 rounded-full">
           More Testimonials
         </button>
       </div>
-      <div className="container mx-auto px-[2rem] grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto  px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard
             key={index}
             content={testimonial.content}
             author={testimonial.author}
-            company={testimonial.company}
           />
         ))}
       </div>
