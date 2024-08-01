@@ -1,0 +1,23 @@
+@keyframes blurEffect {
+    0% {
+        filter: blur(100px);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader {
+    text-align: center;
+    animation: fadeOut 1s ease-out 3s forwards, blurEffect 3s ease-out;
+}

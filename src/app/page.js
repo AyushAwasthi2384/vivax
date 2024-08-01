@@ -6,6 +6,7 @@ import project1 from "../Assets/project1.png";
 import project2 from "../Assets/project2.png";
 import vivax from "../Assets/vivax.jpeg";
 import TestimonialCard from "./components/TestimonialCard";
+import Loader from "./components/Loader";
 export default function Home() {
   const testimonials = [
     {
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <main className="">
+      <Loader />
       <div className="flex flex-col md:flex-row">
         <div className=" w-[70%] mt-[2rem]">
           <Image
