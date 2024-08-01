@@ -254,6 +254,7 @@ export default function Home() {
             key={index}
             content={testimonial.content}
             author={testimonial.author}
+            company={testimonial.company}
           />
         ))}
       </div>
