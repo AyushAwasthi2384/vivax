@@ -1,6 +1,59 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { transporter } from "../../../utils/mailer";
 
 const ContactForm = () => {
+
+  const [data, setData] = useState({
+    name:"",
+    email:"",
+    phone:"",
+    projectType:"",
+    projectDetails:""
+  });
+
+  const handleChange = (e)=>{
+    try{
+      const {name , value} = e.target;
+      console.log(value)
+      setData(()=>{
+        return {
+          ...data,
+          [name]:value
+        }
+      });
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
+  const sendMail = async ()=>{
+    try{
+      const mailOptions = {
+        from: process.env.AUTH_EMAIL,
+        to: process.env.AUTH_EMAIL, // replace with recipient email
+        subject: 'New Project Query',
+        html: `
+          <div style="font-family: Arial, sans-serif; padding: 20px;">
+            <h2 style="color: #f4c20d;">New Project Query</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Phone:</strong> ${data.phone}</p>
+            <p><strong>Project Type:</strong> ${data.projectType}</p>
+            <p><strong>Project Details:</strong> ${data.projectDetails}</p>
+          </div>
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
   return (
     <div className="flex mt-[4rem] justify-between min-h-screen p-4">
       <div>
@@ -24,6 +77,9 @@ const ContactForm = () => {
               id="name"
               type="text"
               placeholder="Your Name"
+              name="name"
+              value={data.name}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
@@ -35,6 +91,9 @@ const ContactForm = () => {
               id="email"
               type="email"
               placeholder="Enter your email address"
+              name="email"
+              value={data.email}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
@@ -46,6 +105,9 @@ const ContactForm = () => {
               id="phone"
               type="phone"
               placeholder="Enter your phone number"
+              name="phone"
+              value={data.phone}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
@@ -55,6 +117,9 @@ const ContactForm = () => {
             <select
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="project-type"
+              name="projectType"
+              value={data.projectType}
+              onChange={handleChange}
             >
               <option>IT</option>
               <option>Ecommerce</option>
@@ -74,12 +139,16 @@ const ContactForm = () => {
               id="project-details"
               placeholder="Enter your project details"
               rows="3"
+              name="projectDetails"
+              value={data.projectDetails}
+              onChange={handleChange}
             />
           </div>
           <div className="flex items-center justify-between">
             <button
               className="bg-yellow-500 hover:bg-yellow-200 hover:text-black text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={sendMail}
             >
               Lets Talk
             </button>
