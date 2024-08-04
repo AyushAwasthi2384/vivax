@@ -13,7 +13,6 @@ import Loader from "./components/Loader";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 export default function Home() {
-
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -25,8 +24,8 @@ export default function Home() {
   }, []);
 
   const [flag, setflag] = useState(true);
-  const [bgColor, setBgColor] = useState('bg-gray-800');
-  const [bgDesign, setbgDesign] = useState('bg-yellow-500');
+  const [bgColor, setBgColor] = useState("bg-gray-800");
+  const [bgDesign, setbgDesign] = useState("bg-yellow-500");
 
   const testimonials = [
     {
@@ -52,36 +51,37 @@ export default function Home() {
       content:
         "Vivax nailed it! Their fresh approach helped us connect with our audience like never before. So glad we chose them!",
       author: "Tushar Tiwari, CEO",
-    }
+    },
   ];
 
   const Apnaconsultant = () => {
     if (flag) {
-      setBgColor('bg-yellow-500 text-black');
-      setbgDesign('bg-gray-800 text-white');
-    }
-    else {
-      setBgColor('bg-gray-800 text-white');
-      setbgDesign('bg-yellow-500 text-black');
+      setBgColor("bg-yellow-500 text-black");
+      setbgDesign("bg-gray-800 text-white");
+    } else {
+      setBgColor("bg-gray-800 text-white");
+      setbgDesign("bg-yellow-500 text-black");
     }
     setflag(!flag);
-  }
+  };
 
   return (
     <main className="">
       {visible && <Loader />}
-      <div className="flex flex-col md:flex-row">
-        <div className=" w-[70%] mt-[2rem]">
+      <div className="flex  flex-col md:flex-row">
+        <div className=" md:w-[70%]  m-[2rem]  mt-[2rem] ">
           <Image
             src={vivax}
-            className="rounded-tr-[5rem] h-[30rem] object-cover rounded-br-[5rem]"
+            className="md:rounded-tr-[5rem] rounded-[3rem] h-[30rem] object-cover md:rounded-br-[5rem]"
             alt="vivax"
             placeholder="blur"
           ></Image>
         </div>
-        <div className=" w-[20%] ml-[2rem] m-4 ">
-          <p className="translate-y-[17rem]  text-white">
-            At Vivax, we offer tailored packages to boost your online presence. From social media reels and blogs to SEO and user-friendly websites, we provide a perfect mix of creativity and strategy.
+        <div className=" md:w-[20%]  ml-[2rem] m-4 ">
+          <p className="md:translate-y-[17rem]  text-white">
+            At Vivax, we offer tailored packages to boost your online presence.
+            From social media reels and blogs to SEO and user-friendly websites,
+            we provide a perfect mix of creativity and strategy.
             <br />
             <br />
             Let us be your guide as you navigate through the online realm!
@@ -89,18 +89,24 @@ export default function Home() {
         </div>
       </div>
       <div className="text-center">
-        <span className="text-white leading-tight text-[20rem]" style={{ fontFamily: 'Monument Extended' }}>
+        <span
+          className="text-white leading-tight text-[5rem] md:text-[20rem]"
+          style={{ fontFamily: "Monument Extended" }}
+        >
           VIVAX
         </span>
       </div>
-      <div className="justify-between text-white py-12 px-4">
-        <div className="  grid grid-cols-2 gap-4">
-          <div className="flex  flex-col justify-between">
-            <div className="flex items-center space-x-4">
+      <div className="md:justify-between justify-around  text-white py-12 px-4">
+        <div className="  grid  md:grid-cols-2 gap-4">
+          <div className="flex   flex-col justify-between">
+            <div className="flex  items-center space-x-4">
               <span className="uppercase text-[3rem] tracking-widest">
                 Located in India
               </span>
-              <div className="rounded-full bg-gray-700 p-3 hover:cursor-pointer hover:scale-[1.7] hover:rotate-[-127deg]" style={{ transition: 'all 0.3s ease-in-out' }}>
+              <div
+                className="rounded-full bg-gray-700 p-3 hover:cursor-pointer hover:scale-[1.7] hover:rotate-[-127deg]"
+                style={{ transition: "all 0.3s ease-in-out" }}
+              >
                 <CiGlobe />
               </div>
             </div>
@@ -108,18 +114,25 @@ export default function Home() {
           <div className="flex flex-col justify-between">
             <div>
               <p className="text-gray-300">
-                Vivax focuses in boosting your online presence and helping your business grow in the digital world.
-                Our packages are customised to fit your unique requirements and enhance the online exposure of what you do.
+                Vivax focuses in boosting your online presence and helping your
+                business grow in the digital world. Our packages are customised
+                to fit your unique requirements and enhance the online exposure
+                of what you do.
                 <br />
                 <br />
-                We provide everything from excellent SEO and slick, user-friendly websites to intriguing blogs and social media reels. It is your one-stop shop for digital success, merging vision with creativity in a seamless manner.
+                We provide everything from excellent SEO and slick,
+                user-friendly websites to intriguing blogs and social media
+                reels. It is your one-stop shop for digital success, merging
+                vision with creativity in a seamless manner.
                 <br />
                 <br />
-                We use our experience to make your digital wishes come true and make sure your brand stands out in the jam-packed internet market.
-                Are you prepared to leave your imprint in the online world? Together, let&apos;s go into this thrilling adventure!
+                We use our experience to make your digital wishes come true and
+                make sure your brand stands out in the jam-packed internet
+                market. Are you prepared to leave your imprint in the online
+                world? Together, let&apos;s go into this thrilling adventure!
               </p>
             </div>
-            <div className="border-t border-gray-700 pt-4 mt-4">
+            <div className="-t -gray-700 pt-4 mt-4">
               <h2 className="text-xl font-bold">Discuss Your Ideas</h2>
               <p className="text-sm">
                 Discuss your ideas and get advice from professionals
@@ -139,7 +152,7 @@ export default function Home() {
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden p-6 space-y-6"
+              className="bg-gray-800  -yellow-500 rounded-lg overflow-hidden p-6 space-y-6"
             >
               <div className="h-[25rem] bg-gray-700"></div>
               <button className="w-full bg-white text-gray-900 rounded-full py-2">
@@ -149,8 +162,8 @@ export default function Home() {
           ))}
         </div>
       </div> */}
-      <div className="flex items-center justify-center  bg-black p-4">
-        <div className="text-center text-white max-w-xl my-[10rem]">
+      <div className="flex items-center  justify-center bg-black p-4">
+        <div className="text-center text-white  md:my-[10rem]">
           <p className="text-2xl md:text-4xl font-bold mb-4">
             &quot;IF YOU ARE NOT A <span className="text-yellow-400">RISK</span>{" "}
             TAKER, YOU SHOULD GET THE HELL OUT OF{" "}
@@ -159,14 +172,23 @@ export default function Home() {
           <p className="text-lg md:text-2xl font-semibold">- Ray Kroc</p>
         </div>
       </div>
-      <div className="text-center py-8 bg-black text-white">
-        <h1 className="text-[5rem] md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>PROJECTS.</h1>
+      <div id="projects" className=" text-center py-8 bg-black text-white">
+        <h1
+          className="md:text-[5rem] text-[2rem]  font-bold"
+          style={{ fontFamily: "Monument Extended" }}
+        >
+          PROJECTS.
+        </h1>
         <p className="text-lg md:text-xl">
-          Check out our awesome projects, crafted to make your brand shine and engage with your audience!
+          Check out our awesome projects, crafted to make your brand shine and
+          engage with your audience!
         </p>
       </div>
       <div className="flex justify-center gap-4 mt-4 mb-8">
-        <button className={`${bgDesign} py-2 px-4 rounded-full`} onClick={Apnaconsultant}>
+        <button
+          className={`${bgDesign} py-2 px-4 rounded-full`}
+          onClick={Apnaconsultant}
+        >
           Design
         </button>
         <button
@@ -181,9 +203,13 @@ export default function Home() {
       </div>
 
       {flag && (
-        <div className="flex">
-          <div className="flex w-[50%] flex-col m-[2rem]">
-            <Link href={"https://www.linkedin.com/company/grayy/"} target="_blank" className="">
+        <div className="md:flex">
+          <div className="flex md:w-[50%] flex-col m-[2rem]">
+            <Link
+              href={"https://www.linkedin.com/company/grayy/"}
+              target="_blank"
+              className=""
+            >
               <Image
                 src={Grayy}
                 alt={Grayy}
@@ -201,8 +227,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex w-[50%] flex-col m-[2rem]">
-            <Link href={"https://www.linkedin.com/company/matrix-innovation/"} target="_blank" className="">
+          <div className="flex md:w-[50%] flex-col m-[2rem]">
+            <Link
+              href={"https://www.linkedin.com/company/matrix-innovation/"}
+              target="_blank"
+              className=""
+            >
               <Image
                 src={matrix_innovation}
                 alt={matrix_innovation}
@@ -223,12 +253,16 @@ export default function Home() {
         </div>
       )}
       {!flag && (
-        <div className="flex  flex-col m-[2rem]">
-          <Link href={"https://www.linkedin.com/company/apnaconsultant/"} target="_blank" className="">
+        <div className="flex flex-col m-[2rem]">
+          <Link
+            href={"https://www.linkedin.com/company/apnaconsultant/"}
+            target="_blank"
+            className=""
+          >
             <Image
               src={Apna_Colsultant}
               alt={Apna_Colsultant}
-              className="object-cover rounded-[3rem] w-[60%] translate-x-[18rem] hover:opacity-80 cursor-pointer"
+              className="object-cover md:rounded-[3rem] rounded-[2rem] md:w-[60%] md:translate-x-[18rem] hover:opacity-80 cursor-pointer"
             />
           </Link>
           <div className="p-4 text-center text-white">
@@ -243,8 +277,13 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="text-center mt-[5rem] flex justify-between py-8 px-[2rem] bg-black text-white">
-        <h1 className="text-4xl md:text-6xl font-bold" style={{ fontFamily: 'Monument Extended' }}>TESTIMONIALS</h1>
+      <div className="text-center mt-[5rem] md:flex justify-between py-8 px-[2rem] bg-black text-white">
+        <h1
+          className="text-4xl md:text-6xl font-bold"
+          style={{ fontFamily: "Monument Extended" }}
+        >
+          TESTIMONIALS
+        </h1>
         <button className="mt-4  bg-yellow-500 text-black py-2 px-4 rounded-full">
           More Testimonials
         </button>

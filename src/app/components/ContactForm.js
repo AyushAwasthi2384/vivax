@@ -3,37 +3,35 @@ import React, { useState } from "react";
 import { transporter } from "../../../utils/mailer";
 
 const ContactForm = () => {
-
   const [data, setData] = useState({
-    name:"",
-    email:"",
-    phone:"",
-    projectType:"",
-    projectDetails:""
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    projectDetails: "",
   });
 
-  const handleChange = (e)=>{
-    try{
-      const {name , value} = e.target;
-      console.log(value)
-      setData(()=>{
+  const handleChange = (e) => {
+    try {
+      const { name, value } = e.target;
+      console.log(value);
+      setData(() => {
         return {
           ...data,
-          [name]:value
-        }
+          [name]: value,
+        };
       });
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-  }
+  };
 
-  const sendMail = async ()=>{
-    try{
+  const sendEmail = async () => {
+    try {
       const mailOptions = {
         from: process.env.AUTH_EMAIL,
-        to: process.env.AUTH_EMAIL, // replace with recipient email
-        subject: 'New Project Query',
+        to: "vivaxmarketers@gmail.com", // replace with recipient email
+        subject: "New Project Query",
         html: `
           <div style="font-family: Arial, sans-serif; padding: 20px;">
             <h2 style="color: #f4c20d;">New Project Query</h2>
@@ -47,33 +45,38 @@ const ContactForm = () => {
       };
 
       await transporter.sendMail(mailOptions);
-
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-  }
+  };
 
   return (
-    <div className="flex mt-[4rem] justify-between min-h-screen p-4">
-      <div>
-        <h1 className="text-yellow-400 ml-[2rem] leading-tight mt-[2rem] text-[3rem]" style={{ fontFamily: "Monument Extended" }}>SAY</h1>
+    <div id="contact" className="md:flex md:mt-[4rem] justify-between min-h-screen p-4">
+      <div className="flex flex-row mb-[1rem] justify-center md:flex-col">
         <h1
-          className="text-white text-[10rem] leading-tight ml-[2rem]"
+          className="text-yellow-400 ml-[2rem] leading-tight mt-[2rem] text-[2rem] md:text-[3rem]"
+          style={{ fontFamily: "Monument Extended" }}
+        >
+          SAY
+        </h1>
+        <h1
+          className="text-white md:text-[10rem] text-[2rem] mt-[2rem] leading-tight ml-[2rem]"
           style={{ fontFamily: "Monument Extended" }}
         >
           HELLO!
         </h1>
       </div>
-      <div className="w-full m-4 max-w-xl p-8 shadow-lg shadow-yellow-500 rounded-3xl">
-        <h2 className="text-3xl font-bold mb-6 text-gray-50 text-left">For project queries</h2>
-        <form>
+      <div className="w-full  md:m-4 max-w-xl p-8 shadow-lg shadow-yellow-500 rounded-3xl">
+        <h2 className="text-3xl font-bold mb-6 text-gray-50 text-left">
+          For project queries
+        </h2>
+        <form className="">
           <div className="mb-4">
             <label className="block text-gray-200 text-sm font-bold mb-2">
               Name
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
               placeholder="Your Name"
@@ -87,7 +90,7 @@ const ContactForm = () => {
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
               placeholder="Enter your email address"
@@ -101,7 +104,7 @@ const ContactForm = () => {
               Phone Number
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="phone"
               type="phone"
               placeholder="Enter your phone number"
@@ -148,7 +151,7 @@ const ContactForm = () => {
             <button
               className="bg-yellow-500 hover:bg-yellow-200 hover:text-black text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
-              onClick={sendMail}
+              onClick={sendEmail}
             >
               Lets Talk
             </button>

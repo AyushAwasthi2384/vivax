@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { ScrollLink } from 'react-scroll';
 import logo from '@/Assets/logo.png';
 
 const Navbar = () => {
@@ -19,18 +20,27 @@ const Navbar = () => {
         <a href="#services" className="hover:text-yellow-500">Services</a>
         <a href="#contact" className="text-yellow-500">Lets Talk</a>
       </div>
-      <div className="md:hidden">
+      {!isOpen&&<div className="md:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
           <FaBars />
         </button>
-      </div>
+      </div>}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full  text-white flex flex-col items-center space-y-4 p-4">
-          <a href="#about" className="hover:text-yellow-500">About Us</a>
+        <>
+        <div className="md:hidden absolute  bg-black top-16 left-0 w-full  text-white flex flex-col items-center space-y-4 p-4">
+          <a href="#about" className="hover:text-yellow-500" >About Us</a>
           <a href="#projects" className="hover:text-yellow-500">Projects</a>
           <a href="#services" className="hover:text-yellow-500">Services</a>
           <a href="#contact" className="text-yellow-500">Lets Talk</a>
         </div>
+        <div className="md:hidden">
+        <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <FaBars />
+        </button>
+      </div>
+      </div>
+        </>
       )}
     </nav>
   );
