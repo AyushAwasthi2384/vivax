@@ -4,7 +4,7 @@ import { PiStarFourFill } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <footer id="about" className="bg-black text-white py-8">
+    <footer  className="bg-black text-white py-8">
       <div className="bg-yellow-500 text-black text-center py-2 overflow-hidden" style={{ boxShadow: '0px 140px 1000px yellow' }}>
         <div className="flex animate-marquee whitespace-nowrap">
           <span className="text-6xl mr-8">REDIFINE THE IMPOSSIBLE</span>

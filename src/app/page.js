@@ -115,7 +115,7 @@ export default function Home() {
       <div className="md:justify-between justify-around  text-white py-12 px-4">
         <div className="  grid  md:grid-cols-2 gap-4">
           <div className="flex   flex-col justify-between">
-            <div className="flex  items-center space-x-4">
+            <div id="about" className="flex  items-center space-x-4">
               <span className="uppercase text-[3rem] tracking-widest">
                 Located in India
               </span>
