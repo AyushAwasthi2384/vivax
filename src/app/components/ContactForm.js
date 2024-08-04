@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { transporter } from "../../../utils/mailer";
 
+// console.log(process.env.FRONTEND_URL)
 const ContactForm = () => {
   const [data, setData] = useState({
     name: "",
@@ -26,27 +26,20 @@ const ContactForm = () => {
     }
   };
 
-  const sendEmail = async () => {
-    try {
-      const mailOptions = {
-        from: process.env.AUTH_EMAIL,
-        to: "vivaxmarketers@gmail.com", // replace with recipient email
-        subject: "New Project Query",
-        html: `
-          <div style="font-family: Arial, sans-serif; padding: 20px;">
-            <h2 style="color: #f4c20d;">New Project Query</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Phone:</strong> ${data.phone}</p>
-            <p><strong>Project Type:</strong> ${data.projectType}</p>
-            <p><strong>Project Details:</strong> ${data.projectDetails}</p>
-          </div>
-        `,
-      };
+  const handleSubmit = async ()=>{
+    try{
+      const res = await fetch(`http://localhost:3000/api/sendMail/`, {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+      });
 
-      await transporter.sendMail(mailOptions);
-    } catch (err) {
-      console.log(err);
+      if(res.status === 200){
+        console.log("mail sent successfully."); 
+      }
+
     }
   };
 
@@ -66,11 +59,8 @@ const ContactForm = () => {
           HELLO!
         </h1>
       </div>
-      <div className="w-full  md:m-4 max-w-xl p-8 shadow-lg shadow-yellow-500 rounded-3xl">
-        <h2 className="text-3xl font-bold mb-6 text-gray-50 text-left">
-          For project queries
-        </h2>
-        <form className="">
+      <div className="w-full m-4 max-w-xl p-8 shadow-lg shadow-yellow-500 rounded-3xl">
+        <h2 className="text-3xl font-bold mb-6 text-gray-50 text-left">For project queries</h2>
           <div className="mb-4">
             <label className="block text-gray-200 text-sm font-bold mb-2">
               Name
@@ -151,12 +141,11 @@ const ContactForm = () => {
             <button
               className="bg-yellow-500 hover:bg-yellow-200 hover:text-black text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
-              onClick={sendEmail}
+              onClick={handleSubmit}
             >
               Lets Talk
             </button>
           </div>
-        </form>
       </div>
     </div>
   );
