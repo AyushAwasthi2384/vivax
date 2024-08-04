@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-"use server";
-=======
-
->>>>>>> 46ea95dbeb363031bcbe2dda7b107310979ee4da
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
@@ -19,10 +14,6 @@ const transporter = nodemailer.createTransport({
 });
 console.log(transporter);
 
-<<<<<<< HEAD
-export { transporter };
-=======
 // console.log(transporter);
 
 export { transporter }
->>>>>>> 46ea95dbeb363031bcbe2dda7b107310979ee4da

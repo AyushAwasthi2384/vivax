@@ -39,8 +39,11 @@ const ContactForm = () => {
       if(res.status === 200){
         console.log("mail sent successfully."); 
       }
+    }catch (err) {
+        console.log(err);
+      }
 
-    }
+    
   };
 
   return (
