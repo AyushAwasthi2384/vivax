@@ -157,10 +157,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-black text-white py-12 px-4">
+      {/* <div className="bg-black text-white py-12 px-4">
         <div className="text-left ml-5 mb-10">
           <h1
-            className="text-[5rem] font-bold"
+            className="md:text-[5rem] font-bold"
             style={{ fontFamily: "Monument Extended" }}
           >
             PACKAGES
@@ -170,7 +170,7 @@ export default function Home() {
             turn your digital aspirations into reality.
           </p>
         </div>
-        {/* <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((item) => (
             <div
               key={item}
@@ -194,8 +194,8 @@ export default function Home() {
               </button>
             </div>
           ))}
-        </div> */}
-      </div>
+        </div>
+      </div> */}
       <div className="flex items-center  justify-center bg-black p-4">
         <div className="text-center text-white  md:my-[10rem]">
           <p className="text-2xl md:text-4xl font-bold mb-4">
@@ -213,7 +213,7 @@ export default function Home() {
         >
           PROJECTS.
         </h1>
-        <p className="text-lg md:text-xl">
+        <p className="text-lg md:text-xl opacity-55 ">
           Check out our awesome projects, crafted to make your brand shine and
           engage with your audience!
         </p>
