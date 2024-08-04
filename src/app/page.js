@@ -170,7 +170,7 @@ export default function Home() {
             turn your digital aspirations into reality.
           </p>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((item) => (
             <div
               key={item}
@@ -194,7 +194,7 @@ export default function Home() {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="flex items-center  justify-center bg-black p-4">
         <div className="text-center text-white  md:my-[10rem]">
