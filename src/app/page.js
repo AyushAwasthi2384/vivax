@@ -26,7 +26,23 @@ export default function Home() {
   const [flag, setflag] = useState(true);
   const [bgColor, setBgColor] = useState("bg-gray-800");
   const [bgDesign, setbgDesign] = useState("bg-yellow-500");
-
+  const packages = [
+    {
+      fame: "basic",
+      features: ["Feature 1", "Feature 2", "Ese hi 4-6"],
+      Price: "1500",
+    },
+    {
+      fame: "Premium",
+      features: ["Feature 1", "Feature 2", "Ese hi 4-6"],
+      Price: "3000",
+    },
+    {
+      fame: "Enterprise",
+      features: ["Feature 1", "Feature 2", "Ese hi 4-6"],
+      Price: "5000",
+    },
+  ];
   const testimonials = [
     {
       company: "Apna Consultant",
@@ -141,27 +157,45 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="bg-black text-white py-12 px-4">
+      <div className="bg-black text-white py-12 px-4">
         <div className="text-left ml-5 mb-10">
-          <h1 className="text-[5rem] font-bold" style={{ fontFamily: 'Monument Extended' }}>PACKAGES</h1>
+          <h1
+            className="text-[5rem] font-bold"
+            style={{ fontFamily: "Monument Extended" }}
+          >
+            PACKAGES
+          </h1>
           <p className="mt-4 opacity-55">
-            Discover our customized packages, intended to boost your brand and turn your digital aspirations into reality.
+            Discover our customized packages, intended to boost your brand and
+            turn your digital aspirations into reality.
           </p>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
+          {packages.map((item) => (
             <div
               key={item}
               className="bg-gray-800  -yellow-500 rounded-lg overflow-hidden p-6 space-y-6"
             >
-              <div className="h-[25rem] bg-gray-700"></div>
+              <div className="h-[25rem] border bg-gray-700">
+                <div className="text-center capitalize text-[2rem]">
+                  {item.fame}
+                </div>
+                <div className="">
+                  {
+                    item.features.map((e)=>{
+                      return <div key={e} className="text-center text-gray-400 text-sm">{e
+                        }</div>
+                    })
+                  }
+                </div>
+              </div>
               <button className="w-full bg-white text-gray-900 rounded-full py-2">
                 Select Package
               </button>
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
       <div className="flex items-center  justify-center bg-black p-4">
         <div className="text-center text-white  md:my-[10rem]">
           <p className="text-2xl md:text-4xl font-bold mb-4">
