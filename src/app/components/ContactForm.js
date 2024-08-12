@@ -28,7 +28,7 @@ const ContactForm = () => {
 
   const handleSubmit = async ()=>{
     try{
-      const res = await fetch(`http://localhost:3000/api/sendMail/`, {
+      const res = await fetch(`http://vivax.in/api/sendMail/`, {
         method:"POST",
         headers:{
           "Content-Type":"application/json"
