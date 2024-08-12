@@ -14,7 +14,7 @@ const ContactForm = () => {
   const handleChange = (e) => {
     try {
       const { name, value } = e.target;
-      console.log(value);
+      // console.log(value);
       setData(() => {
         return {
           ...data,
@@ -22,7 +22,7 @@ const ContactForm = () => {
         };
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -40,7 +40,7 @@ const ContactForm = () => {
         console.log("mail sent successfully."); 
       }
     }catch (err) {
-        console.log(err);
+        //console.log(err);
       }
 
     
@@ -111,7 +111,7 @@ const ContactForm = () => {
               Project Type
             </label>
             <select
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="project-type"
               name="projectType"
               value={data.projectType}
@@ -131,7 +131,7 @@ const ContactForm = () => {
               Project Details
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="project-details"
               placeholder="Enter your project details"
               rows="3"
