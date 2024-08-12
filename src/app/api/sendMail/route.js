@@ -11,7 +11,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: process.env.AUTH_EMAIL,
-      to: "charliefernandis28@gmail.com", // replace with recipient email
+      to: "vivaxmarketers@gmail.com", // replace with recipient email
       subject: 'New Project Query',
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
