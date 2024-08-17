@@ -12,7 +12,7 @@ import TestimonialCard from "./components/TestimonialCard";
 import Loader from "./components/Loader";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-export default function Home() {
+export default function Home() { 
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
