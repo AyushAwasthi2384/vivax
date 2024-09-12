@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import Loader from "./components/Loader";
 import { Analytics } from "@vercel/analytics/react"
-
+ 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
